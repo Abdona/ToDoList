@@ -12,7 +12,7 @@ body {
 #TaskInput {
   border: none;
   padding: 2px;
-  width: -webkit-fill-available;
+  width: 97%;
   height: 30px;
   border-bottom: 1px solid #f0f0f0;
 }
@@ -23,13 +23,13 @@ body {
 }
 
 #ListContainer {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 #Clear {
-  margin: 0px;
+  margin: 0;
   background-color: #f0f0f0;
 }
 
