@@ -5,25 +5,35 @@ body{
 #List {
     background-color: white;
     text-shadow: 2px 2px 5px white;
-    width: 50%;
-    margin: 220px auto;
+    width: 35%;
+    margin: 150px auto;
 }
 
 #TaskInput {
     border: none;
-    width: 99%;
+    padding: 2px;
+    width: -webkit-fill-available;
     height: 30px;
     border-bottom: 1px solid #F0F0F0;
 }
 
-#TaskInput:active {
-    border: none;
-}
-
 #ListItem {
     border-bottom: 1px solid #F0F0F0;
+    padding: 6px;
 }
 
 #ListContainer {
+    margin: 0px;
+    padding: 0px;
     list-style: none;
+}
+
+#Clear {
+    margin: 0px;
+    background-color: #F0F0F0;
+}
+
+#Clear p {
+    padding: 20px;
+    text-align: center;
 }
