@@ -1,0 +1,29 @@
+body{
+    background-color: wheat;
+}
+
+#List {
+    background-color: white;
+    text-shadow: 2px 2px 5px white;
+    width: 50%;
+    margin: 220px auto;
+}
+
+#TaskInput {
+    border: none;
+    width: 99%;
+    height: 30px;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+#TaskInput:active {
+    border: none;
+}
+
+#ListItem {
+    border-bottom: 1px solid #F0F0F0;
+}
+
+#ListContainer {
+    list-style: none;
+}
