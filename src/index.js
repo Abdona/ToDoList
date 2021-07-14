@@ -3,21 +3,22 @@ import './style.css';
 import { Task } from './Task';
 import { TaskList } from './tasklist';
 
-const NewBookList = new TaskList([]);
-function addTask() {
+const NewTaskList = new TaskList(JSON.parse(localStorage.getItem('library')) || []);
+NewTaskList.ShowBooks();
+//localStorage.clear();
+function addTasks() {
   const TaskText = document.getElementById('TaskInput');
-  const NewTask = new Task(TaskText.value, false);
+  const IdTask = Math.floor(Math.random() * 1000);
+  const NewTask = new Task(TaskText.value, false, IdTask);
   TaskText.value = '';
-  NewBookList.addTask(NewTask);
-  NewBookList.AddToStorage();
+  NewTaskList.addTask(NewTask);
+  NewTaskList.AddToStorage();
 }
+
 const TasksInput = document.getElementById('TaskInput');
-// eslint-disable-next-line no-alert
-// eslint-disable-next-line prefer-arrow-callback
-// eslint-disable-next-line func-names
-// eslint-disable-next-line prefer-arrow-callback
-TasksInput.addEventListener('keyup', function (event) {
+
+TasksInput.addEventListener('keyup', (event) => {
   if (event.code === 'Enter') {
-    addTask();
+    addTasks();
   }
 });
