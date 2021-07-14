@@ -2,6 +2,10 @@
 
 > Implementing To Do List Using Javascript bestpractices and webpack. 
 
+
+# Project Preview
+![ToDo List preview](ToDoList.png)
+
 ## Built With
 
 - HTML
