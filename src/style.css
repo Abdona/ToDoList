@@ -23,11 +23,29 @@ body {
   padding: 6px;
 }
 
+#ListItem img{
+  width: 20px;
+  height: 20px;
+  float: right;
+  opacity: 0.3;
+}
+
 #ListItem input {
+  float: left;
   margin-right: 10px;
 }
 
-#ListItem p {
+#ListItem input::after {
+  content: " ";
+  clear: right;
+}
+
+#taskcont {
+  display: inline;
+}
+
+#taskcont p {
+  word-wrap: break-word;
   display: inline;
 }
 
