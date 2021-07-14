@@ -1,4 +1,5 @@
 import MyImage from './images/3-vertical-dots.svg';
+// eslint-disable-next-line no-unused-vars
 import { Task } from './Task';
 // eslint-disable-next-line import/prefer-default-export
 export class TaskList {
