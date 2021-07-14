@@ -30,6 +30,10 @@ body {
   opacity: 0.3;
 }
 
+#ListItem img:hover {
+  cursor: move;
+}
+
 #ListItem input {
   float: left;
   margin-right: 10px;
