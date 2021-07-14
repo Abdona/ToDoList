@@ -1,0 +1,81 @@
+body {
+  background-color: white;
+}
+
+#List {
+  background-color: white;
+  text-shadow: 2px 2px 5px white;
+  width: 35%;
+  margin: 150px auto;
+  box-shadow: 5px 5px 6px 6px #888;
+}
+
+#TaskInput {
+  border: none;
+  padding: 4px;
+  width: 97%;
+  height: 30px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+#ListItem {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 6px;
+}
+
+#ListItem img {
+  width: 20px;
+  height: 20px;
+  float: right;
+  opacity: 0.3;
+}
+
+#ListItem img:hover {
+  cursor: move;
+}
+
+#ListItem input {
+  float: left;
+  margin-right: 10px;
+}
+
+#ListItem input::after {
+  content: " ";
+  clear: right;
+}
+
+#taskcont {
+  display: inline;
+}
+
+#taskcont p {
+  word-wrap: break-word;
+  display: inline;
+}
+
+#ListContainer {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#Clear {
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+#Clear p {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+#List-title {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 2px;
+  margin-left: 2px;
+}
+
+#List-title p {
+  margin-left: 10px;
+}
