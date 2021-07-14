@@ -18,28 +18,28 @@ body {
   border-bottom: 1px solid #f0f0f0;
 }
 
-#ListItem {
+.ListItem {
   border-bottom: 1px solid #f0f0f0;
   padding: 6px;
 }
 
-#ListItem img {
+.ListItem img {
   width: 20px;
   height: 20px;
   float: right;
   opacity: 0.3;
 }
 
-#ListItem img:hover {
+.ListItem img:hover {
   cursor: move;
 }
 
-#ListItem input {
+.ListItem input {
   float: left;
   margin-right: 10px;
 }
 
-#ListItem input::after {
+.ListItem input::after {
   content: " ";
   clear: right;
 }

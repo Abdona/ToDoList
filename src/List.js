@@ -1,21 +1,21 @@
-/* eslint-disable no-restricted-syntax */
-import MyImage from './images/3-vertical-dots.svg';
-// eslint-disable-next-line import/prefer-default-export
-export function CreatList(Task) {
-// eslint-disable-next-line guard-for-in
-  for (const i in Task) {
-    const NewListItem = document.createElement('li');
-    const NewListTask = document.createElement('p');
-    const NewListCheck = document.createElement('input');
-    const NewListdots = document.createElement('img');
-    const TaskDiv = document.createElement('div');
-    TaskDiv.setAttribute('id', 'taskcont');
-    NewListdots.setAttribute('src', MyImage);
-    NewListItem.setAttribute('id', 'ListItem');
-    NewListCheck.setAttribute('type', 'checkbox');
-    NewListTask.innerHTML = Task[i].description;
-    document.getElementById('ListContainer').appendChild(NewListItem).appendChild(NewListCheck);
-    document.getElementById('ListContainer').appendChild(NewListItem).appendChild(TaskDiv).appendChild(NewListTask);
-    document.getElementById('ListContainer').appendChild(NewListItem).appendChild(NewListdots);
-  }
-}
+// // /* eslint-disable func-names */
+// // // import { Task } from './Task';
+// // // import { TaskList } from './tasklist';
+
+// // //const NewBookList = new TaskList(JSON.parse(localStorage.getItem('library')) || []);
+// // // function addTask() {
+// // //   alert('dddd')
+// //   // const TaskText = document.getElementById('TaskInput').nodeValue;
+// //   // const NewTask = new Task(TaskText, false);
+// //   // NewBookList.addTask(NewTask);
+// //   // NewBookList.AddToStorage();
+// // // }
+// // const TasksInput = document.getElementById('TaskInput');
+// // alert(TasksInput);
+// // // eslint-disable-next-line prefer-arrow-callback
+// // TasksInput.addEventListener('keyup', function (event) {
+// //   if (event.code == 'Enter') {
+// //     alert('dddd');
+// //   }
+// // });
+// alert('ddddd');
