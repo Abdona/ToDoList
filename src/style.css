@@ -1,5 +1,5 @@
 body {
-  background-color: wheat;
+  background-color: white;
 }
 
 #List {
@@ -7,11 +7,12 @@ body {
   text-shadow: 2px 2px 5px white;
   width: 35%;
   margin: 150px auto;
+  box-shadow: 5px 5px 6px 6px #888;
 }
 
 #TaskInput {
   border: none;
-  padding: 2px;
+  padding: 4px;
   width: 97%;
   height: 30px;
   border-bottom: 1px solid #f0f0f0;
@@ -20,6 +21,14 @@ body {
 #ListItem {
   border-bottom: 1px solid #f0f0f0;
   padding: 6px;
+}
+
+#ListItem input {
+  margin-right: 10px;
+}
+
+#ListItem p {
+  display: inline;
 }
 
 #ListContainer {
@@ -34,6 +43,7 @@ body {
 }
 
 #Clear p {
+  margin: 0;
   padding: 20px;
   text-align: center;
 }
@@ -42,4 +52,8 @@ body {
   border-bottom: 1px solid #f0f0f0;
   padding: 2px;
   margin-left: 2px;
+}
+
+#List-title p {
+  margin-left: 10px;
 }
