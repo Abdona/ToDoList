@@ -1,14 +1,16 @@
 // /* eslint-disable guard-for-in */
 import './style.css';
 import { Task } from './Task';
-import { TaskList } from './tasklist';
+import { TaskList } from './tasklist';// [1,2,3,4]
 
 const NewTaskList = new TaskList(JSON.parse(localStorage.getItem('library')) || []);
 NewTaskList.ShowBooks();
+
+// localStorage.clear();
 function addTasks() {
   const TaskText = document.getElementById('TaskInput');
-  const IdTask = Math.floor(Math.random() * 1000);
-  const NewTask = new Task(TaskText.value, false, IdTask);
+  const TaskId = Math.floor(Math.random() * 1000); // idGenerate();
+  const NewTask = new Task(TaskText.value, false, TaskId);
   TaskText.value = '';
   NewTaskList.addTask(NewTask);
   NewTaskList.AddToStorage();

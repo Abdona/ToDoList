@@ -1,4 +1,5 @@
 import MyImage from './images/3-vertical-dots.svg';
+import { dragDrop } from './Drag_Drop';
 // eslint-disable-next-line no-unused-vars
 import { Task } from './Task';
 // eslint-disable-next-line import/prefer-default-export
@@ -24,12 +25,12 @@ export class TaskList {
     NewListCheck.addEventListener('click', () => { this.CheckSelect(Task); });
     const NewListdots = document.createElement('img');
     NewListdots.setAttribute('src', MyImage);
-    // NewListdots.addEventListener('click',() => {})
     const TaskDiv = document.createElement('div');
     TaskDiv.setAttribute('id', 'taskcont');
     document.getElementById('ListContainer').appendChild(NewListItem).appendChild(NewListCheck);
     document.getElementById('ListContainer').appendChild(NewListItem).appendChild(TaskDiv).appendChild(NewListTask);
     document.getElementById('ListContainer').appendChild(NewListItem).appendChild(NewListdots);
+    dragDrop(this.TaskListCollection);
   }
 
   // eslint-disable-next-line class-methods-use-this
