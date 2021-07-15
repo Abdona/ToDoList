@@ -20,9 +20,11 @@ export class TaskList {
     NewListTask.setAttribute('id', Task.id * 2);
     const NewListCheck = document.createElement('input');
     NewListCheck.setAttribute('type', 'checkbox');
+    NewListCheck.setAttribute('id', Task.id * 3);
     NewListCheck.addEventListener('click', () => { this.CheckSelect(Task); });
     const NewListdots = document.createElement('img');
     NewListdots.setAttribute('src', MyImage);
+    // NewListdots.addEventListener('click',() => {})
     const TaskDiv = document.createElement('div');
     TaskDiv.setAttribute('id', 'taskcont');
     document.getElementById('ListContainer').appendChild(NewListItem).appendChild(NewListCheck);
@@ -47,7 +49,10 @@ export class TaskList {
   // eslint-disable-next-line class-methods-use-this
   CheckSelectonref(Task) {
     const TaskP = document.getElementById(Task.id * 2);
+    //const listContainer = document.getElementById(Task.id);
+    const newCheckBox = document.getElementById(Task.id * 3);
     if (Task.status === true) {
+      newCheckBox.checked = true;
       TaskP.style.textDecoration = 'line-through';
     }
   }
