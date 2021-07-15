@@ -48,10 +48,13 @@ body {
   display: inline;
 }
 
-.Clear p {
+.Clear a {
   margin: 0;
   padding: 20px;
   text-align: center;
+  text-decoration: none;
+  color: black;
+  display: block;
 }
 
 #taskcont p {
@@ -68,7 +71,6 @@ body {
 .Clear {
   margin: 0;
   background-color: #f0f0f0;
-  border-bottom: 1px solid black;
 }
 
 #List-title {
