@@ -8,11 +8,13 @@ import { Task } from './Task';
 export class TaskList {
   constructor(Tasks) {
     this.TaskListCollection = Tasks;
+    this.length = 0;
   }
 
   // eslint-disable-next-line class-methods-use-this
   addTask(Task, flag = true) {
     if (flag === true) {
+      this.length += 1;
       this.TaskListCollection.push(Task);
     }
     const NewListItem = document.createElement('li');
@@ -34,20 +36,6 @@ export class TaskList {
     document.getElementById('ListContainer').appendChild(NewListItem).appendChild(NewListdots);
     dragDrop(this.TaskListCollection);
   }
-
-  // eslint-disable-next-line class-methods-use-this
-  // CheckSelect(Task) {
-  //   const TaskP = document.getElementById(Task.id * 2);
-  //   if (Task.status === false) {
-  //     Task.status = true;
-  //     this.AddToStorage();
-  //     TaskP.style.textDecoration = 'line-through';
-  //   } else {
-  //     Task.status = false;
-  //     this.AddToStorage();
-  //     TaskP.style.textDecoration = 'none';
-  //   }
-  // }
 
   clearCompleted() {
     const NewTaskList = [];
@@ -74,11 +62,13 @@ export class TaskList {
   }
 
   AddToStorage() {
+    localStorage.setItem('length', JSON.stringify(this.length));
     localStorage.setItem('library', JSON.stringify(this.TaskListCollection));
   }
   /* eslint-disable */
     ShowTasks() {
       for (const i in this.TaskListCollection) {
+        this.length +=1 ;
         this.addTask(this.TaskListCollection[i],false);
         this.CheckSelectonref(this.TaskListCollection[i]);
       }
