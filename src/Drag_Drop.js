@@ -25,10 +25,28 @@ export function dragDrop() {
           if (current === items[it]) { currentpos = it; }
           if (this === items[it]) { droppedpos = it; }
         }
-        if (currentpos < droppedpos) {
+        if (currentpos < droppedpos) { // [1,2,3]
           this.parentNode.insertBefore(current, this.nextSibling);
+          const ItemsList = [];
+          const target = document.getElementById('ListContainer');
+          const items = target.getElementsByTagName('li');
+          for (const i of items) {
+            const taskText = i.getElementsByTagName('div')[0].getElementsByTagName('p')[0].innerText;
+            const taskCompletion = (i.getElementsByTagName('input'))[0].checked;
+            ItemsList.push({ description: taskText, status: taskCompletion, id: i.id });
+          }
+          localStorage.setItem('library', JSON.stringify(ItemsList));
         } else {
           this.parentNode.insertBefore(current, this);
+          const ItemsList = [];
+          const target = document.getElementById('ListContainer');
+          const items = target.getElementsByTagName('li');
+          for (const i of items) {
+            const taskText = i.getElementsByTagName('p').value;
+            const taskCompletion = (i.getElementsByTagName('input')).checked;
+            ItemsList.push([{ description: taskText, status: taskCompletion, id: i.id }]);
+          }
+          localStorage.setItem('library', JSON.stringify(ItemsList));
         }
       }
     });

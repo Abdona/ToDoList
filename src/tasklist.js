@@ -8,6 +8,7 @@ import { Task } from './Task';
 export class TaskList {
   constructor(Tasks) {
     this.TaskListCollection = Tasks;
+    this.Task1 = [];
     this.length = 0;
   }
 
@@ -34,7 +35,7 @@ export class TaskList {
     document.getElementById('ListContainer').appendChild(NewListItem).appendChild(NewListCheck);
     document.getElementById('ListContainer').appendChild(NewListItem).appendChild(TaskDiv).appendChild(NewListTask);
     document.getElementById('ListContainer').appendChild(NewListItem).appendChild(NewListdots);
-    dragDrop(this.TaskListCollection);
+    dragDrop();
   }
 
   clearCompleted() {
