@@ -1,5 +1,6 @@
 import MyImage from './images/3-vertical-dots.svg';
 import { dragDrop } from './Drag_Drop';
+// eslint-disable-next-line import/no-cycle
 import { CheckSelect } from './StatusUpdate';
 // eslint-disable-next-line no-unused-vars
 import { Task } from './Task';
@@ -76,7 +77,7 @@ export class TaskList {
     localStorage.setItem('library', JSON.stringify(this.TaskListCollection));
   }
   /* eslint-disable */
-    ShowBooks() {
+    ShowTasks() {
       for (const i in this.TaskListCollection) {
         this.addTask(this.TaskListCollection[i],false);
         this.CheckSelectonref(this.TaskListCollection[i]);
