@@ -1,5 +1,6 @@
 import MyImage from './images/3-vertical-dots.svg';
 import { dragDrop } from './Drag_Drop';
+import { CheckSelect } from './StatusUpdate';
 // eslint-disable-next-line no-unused-vars
 import { Task } from './Task';
 // eslint-disable-next-line import/prefer-default-export
@@ -22,7 +23,7 @@ export class TaskList {
     const NewListCheck = document.createElement('input');
     NewListCheck.setAttribute('type', 'checkbox');
     NewListCheck.setAttribute('id', Task.id * 3);
-    NewListCheck.addEventListener('click', () => { this.CheckSelect(Task); });
+    NewListCheck.addEventListener('click', () => { CheckSelect(Task); });
     const NewListdots = document.createElement('img');
     NewListdots.setAttribute('src', MyImage);
     const TaskDiv = document.createElement('div');
@@ -34,18 +35,18 @@ export class TaskList {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  CheckSelect(Task) {
-    const TaskP = document.getElementById(Task.id * 2);
-    if (Task.status === false) {
-      Task.status = true;
-      this.AddToStorage();
-      TaskP.style.textDecoration = 'line-through';
-    } else {
-      Task.status = false;
-      this.AddToStorage();
-      TaskP.style.textDecoration = 'none';
-    }
-  }
+  // CheckSelect(Task) {
+  //   const TaskP = document.getElementById(Task.id * 2);
+  //   if (Task.status === false) {
+  //     Task.status = true;
+  //     this.AddToStorage();
+  //     TaskP.style.textDecoration = 'line-through';
+  //   } else {
+  //     Task.status = false;
+  //     this.AddToStorage();
+  //     TaskP.style.textDecoration = 'none';
+  //   }
+  // }
 
   clearCompleted() {
     const NewTaskList = [];

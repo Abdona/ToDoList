@@ -1,7 +1,7 @@
 // /* eslint-disable guard-for-in */
 import './style.css';
 import { Task } from './Task';
-import { TaskList } from './tasklist';// [1,2,3,4]
+import { TaskList } from './tasklist';
 
 const NewTaskList = new TaskList(JSON.parse(localStorage.getItem('library')) || []);
 NewTaskList.ShowBooks();
@@ -29,3 +29,6 @@ TasksInput.addEventListener('keyup', (event) => {
     addTasks();
   }
 });
+
+// eslint-disable-next-line import/prefer-default-export
+export { NewTaskList };
