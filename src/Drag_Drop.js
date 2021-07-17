@@ -7,6 +7,11 @@ export function dragDrop() {
   let current = null;
   for (const i of items) {
     i.draggable = true;
+
+    i.addEventListener('dragstart', function () {
+      current = this;
+    });
+
     // eslint-disable-next-line func-names
     i.addEventListener('dragstart', function () {
       current = this;
@@ -16,22 +21,23 @@ export function dragDrop() {
       evt.preventDefault();
     });
     // eslint-disable-next-line func-names
-    i.addEventListener('drop', function () {
+    i.addEventListener('drop', function (ev) {
+      ev.preventDefault();
       if (this !== current) {
-        let currentpos = 0; let
-          droppedpos = 0;
+        let currentpos = 0;
+        let droppedpos = 0;
         // eslint-disable-next-line no-plusplus
         for (let it = 0; it < items.length; it++) {
           if (current === items[it]) { currentpos = it; }
           if (this === items[it]) { droppedpos = it; }
         }
-        if (currentpos < droppedpos) { // [1,2,3]
+        if (currentpos < droppedpos) {
           this.parentNode.insertBefore(current, this.nextSibling);
           const ItemsList = [];
           const target = document.getElementById('ListContainer');
           const items = target.getElementsByTagName('li');
           for (const i of items) {
-            const taskText = i.getElementsByTagName('div')[0].getElementsByTagName('p')[0].innerText;
+            const taskText = i.getElementsByTagName('div')[0].getElementsByTagName('textarea')[0].value;
             const taskCompletion = (i.getElementsByTagName('input'))[0].checked;
             ItemsList.push({ description: taskText, status: taskCompletion, id: i.id });
           }
@@ -42,9 +48,9 @@ export function dragDrop() {
           const target = document.getElementById('ListContainer');
           const items = target.getElementsByTagName('li');
           for (const i of items) {
-            const taskText = i.getElementsByTagName('p').value;
-            const taskCompletion = (i.getElementsByTagName('input')).checked;
-            ItemsList.push([{ description: taskText, status: taskCompletion, id: i.id }]);
+            const taskText = i.getElementsByTagName('div')[0].getElementsByTagName('textarea')[0].value;
+            const taskCompletion = (i.getElementsByTagName('input'))[0].checked;
+            ItemsList.push({ description: taskText, status: taskCompletion, id: i.id });
           }
           localStorage.setItem('library', JSON.stringify(ItemsList));
         }

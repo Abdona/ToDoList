@@ -4,6 +4,8 @@ import { dragDrop } from './Drag_Drop';
 import { CheckSelect } from './StatusUpdate';
 // eslint-disable-next-line no-unused-vars
 import { Task } from './Task';
+// eslint-disable-next-line import/no-cycle
+import { editContent } from './ContentUpdate';
 // eslint-disable-next-line import/prefer-default-export
 export class TaskList {
   constructor(Tasks) {
@@ -21,7 +23,10 @@ export class TaskList {
     const NewListItem = document.createElement('li');
     NewListItem.setAttribute('id', Task.id);
     NewListItem.setAttribute('class', 'ListItem');
-    const NewListTask = document.createElement('p');
+    const NewListTask = document.createElement('textarea');
+    NewListTask.setAttribute('maxlength', '255');
+    NewListTask.setAttribute('contenteditable', 'true');
+    NewListTask.addEventListener('change', () => { editContent(Task); });
     NewListTask.innerHTML = Task.description;
     NewListTask.setAttribute('id', Task.id * 2);
     const NewListCheck = document.createElement('input');
@@ -46,6 +51,8 @@ export class TaskList {
         NewTaskList.push(this.TaskListCollection[i]);
       } else {
         document.getElementById(this.TaskListCollection[i].id).remove();
+        this.length -= 1;
+        localStorage.setItem('length', JSON.stringify(this.length));
       }
     }
     this.TaskListCollection = NewTaskList;
