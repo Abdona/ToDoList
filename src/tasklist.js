@@ -44,15 +44,13 @@ export class TaskList {
   }
 
   clearCompleted() {
-    const NewTaskList = [];
+    const NewTaskList = this.TaskListCollection.filter((task) => task.status === false);
+    this.length = NewTaskList.length;
+    localStorage.setItem('length', JSON.stringify(this.length));
     // eslint-disable-next-line no-restricted-syntax
     for (const i in this.TaskListCollection) {
-      if (this.TaskListCollection[i].status === false) {
-        NewTaskList.push(this.TaskListCollection[i]);
-      } else {
+      if (this.TaskListCollection[i].status === true) {
         document.getElementById(this.TaskListCollection[i].id).remove();
-        this.length -= 1;
-        localStorage.setItem('length', JSON.stringify(this.length));
       }
     }
     this.TaskListCollection = NewTaskList;
