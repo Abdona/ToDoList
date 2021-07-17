@@ -52,9 +52,10 @@ body {
   display: inline;
 }
 
-.hint { 
-  background: #fea; 
+.hint {
+  background: #fea;
 }
+
 .active { 
   background: #ffd4d4; 
 }
