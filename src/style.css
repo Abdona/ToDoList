@@ -52,14 +52,12 @@ body {
   display: inline;
 }
 
-
 .hint { 
   background: #fea; 
 }
 .active { 
   background: #ffd4d4; 
 }
-
 
 .Clear a {
   margin: 0;
@@ -74,8 +72,8 @@ body {
   word-wrap: break-word;
   overflow: hidden;
   resize: none;
-  border:none;
-  height:12px;
+  border: none;
+  height: 12px;
 }
 
 #taskcont textarea:focus {
