@@ -1,11 +1,14 @@
 body {
-  background-color: #F4F5F7;
+  background-color: #f4f5f7;
 }
 
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*, 
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
