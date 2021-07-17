@@ -1,19 +1,30 @@
 body {
-  background-color: white;
+  background-color: #f4f5f7;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 #List {
   background-color: white;
-  text-shadow: 2px 2px 5px white;
-  width: 35%;
+  width: 100%;
+  max-width: 450px;
   margin: 150px auto;
-  box-shadow: 5px 5px 6px 6px #888;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
 }
 
 #TaskInput {
   border: none;
-  padding: 4px;
-  width: 97%;
+  padding: 22px;
+  width: 100%;
+  display: block;
   height: 30px;
   border-bottom: 1px solid #f0f0f0;
 }
@@ -24,7 +35,7 @@ body {
 
 .ListItem {
   border-bottom: 1px solid #f0f0f0;
-  padding: 6px;
+  padding: 13px;
 }
 
 .ListItem img {
@@ -40,7 +51,7 @@ body {
 
 .ListItem input {
   float: left;
-  margin-right: 10px;
+  margin-right: 19px;
 }
 
 .ListItem input::after {
@@ -74,7 +85,7 @@ body {
   overflow: hidden;
   resize: none;
   border: none;
-  height: 12px;
+  height: 18px;
 }
 
 #taskcont textarea:focus {

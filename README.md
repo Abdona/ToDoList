@@ -4,7 +4,7 @@
 
 
 # Project Preview
-![ToDo List preview](ToDoList.png)
+![ToDo List preview](TodoListfinal.png)
 
 ## Built With
 
@@ -65,10 +65,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
 
 ## 📝 License
 
-This project is [MIT](lic.url) licensed.
+This project is [MIT](https://github.com/Abdona/ToDoList/blob/features_interactive/LICENSE) licensed.

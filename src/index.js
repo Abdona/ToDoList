@@ -21,10 +21,8 @@ function clearCompleted() {
 const clearAll = document.getElementById('clearall');
 clearAll.onclick = clearCompleted;
 const TasksInput = document.getElementById('TaskInput');
-TasksInput.addEventListener('keyup', (event) => {
-  if (event.code === 'Enter') {
-    addTasks();
-  }
+TasksInput.addEventListener('change', () => {
+  addTasks();
 });
 
 // eslint-disable-next-line import/prefer-default-export
