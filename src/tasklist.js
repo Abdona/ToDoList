@@ -6,6 +6,7 @@ import { CheckSelect } from './StatusUpdate';
 import { Task } from './Task';
 // eslint-disable-next-line import/no-cycle
 import { editContent } from './ContentUpdate';
+import { newId } from './TaskId';
 // eslint-disable-next-line import/prefer-default-export
 export class TaskList {
   constructor(Tasks) {
@@ -50,11 +51,14 @@ export class TaskList {
     // eslint-disable-next-line no-restricted-syntax
     for (const i in this.TaskListCollection) {
       if (this.TaskListCollection[i].status === true) {
+        document.getElementById(this.TaskListCollection[i].id).remove();
         // eslint-disable-next-line no-plusplus
         for (let j = i; j < this.length; j++) {
+          document.getElementById(`${NewTaskList[j].id * 1}`).id = `${((NewTaskList[j].id) - 1)}`;
+          document.getElementById(`li${NewTaskList[j].id * 2}`).id = `li${((NewTaskList[j].id) - 1) * 2}`;
+          document.getElementById(`bx${NewTaskList[j].id * 3}`).id = `bx${((NewTaskList[j].id) - 1) * 3}`;
           NewTaskList[j].id -= 1;
         }
-        document.getElementById(this.TaskListCollection[i].id).remove();
       }
     }
     this.TaskListCollection = NewTaskList;
