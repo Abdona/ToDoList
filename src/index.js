@@ -2,13 +2,15 @@
 import './style.css';
 import { Task } from './Task';
 import { TaskList } from './tasklist';
+import { idUpdate } from './TaskId';
 
 const NewTaskList = new TaskList(JSON.parse(localStorage.getItem('library')) || []);
 NewTaskList.ShowTasks();
 // localStorage.clear();
 function addTasks() {
   const TaskText = document.getElementById('TaskInput');
-  const TaskId = Math.floor(Math.random() * 1000); // idGenerate();
+  // const TaskId = Math.floor(Math.random() * 1000); // idGenerate();
+  const TaskId = idUpdate(NewTaskList);
   const NewTask = new Task(TaskText.value, false, TaskId);
   TaskText.value = '';
   NewTaskList.addTask(NewTask);

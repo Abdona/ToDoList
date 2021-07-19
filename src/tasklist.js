@@ -28,10 +28,10 @@ export class TaskList {
     NewListTask.setAttribute('contenteditable', 'true');
     NewListTask.addEventListener('change', () => { editContent(Task); });
     NewListTask.innerHTML = Task.description;
-    NewListTask.setAttribute('id', Task.id * 2);
+    NewListTask.setAttribute('id', `li${Task.id * 2}`);
     const NewListCheck = document.createElement('input');
     NewListCheck.setAttribute('type', 'checkbox');
-    NewListCheck.setAttribute('id', Task.id * 3);
+    NewListCheck.setAttribute('id', `bx${Task.id * 3}`);
     NewListCheck.addEventListener('click', () => { CheckSelect(Task); });
     const NewListdots = document.createElement('img');
     NewListdots.setAttribute('src', MyImage);
@@ -50,6 +50,10 @@ export class TaskList {
     // eslint-disable-next-line no-restricted-syntax
     for (const i in this.TaskListCollection) {
       if (this.TaskListCollection[i].status === true) {
+        // eslint-disable-next-line no-plusplus
+        for (let j = i; j < this.length; j++) {
+          NewTaskList[j].id -= 1;
+        }
         document.getElementById(this.TaskListCollection[i].id).remove();
       }
     }
@@ -59,11 +63,12 @@ export class TaskList {
 
   // eslint-disable-next-line class-methods-use-this
   CheckSelectonref(Task) {
-    const TaskP = document.getElementById(Task.id * 2);
-    const newCheckBox = document.getElementById(Task.id * 3);
+    const TaskP = document.getElementById(`li${Task.id * 2}`);
+    const newCheckBox = document.getElementById(`bx${Task.id * 3}`);
     if (Task.status === true) {
       newCheckBox.checked = true;
       TaskP.style.textDecoration = 'line-through';
+      TaskP.style.color = 'rgba(0, 0, 0, 0.45)';
     }
   }
 
