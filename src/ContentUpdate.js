@@ -2,7 +2,7 @@
 import { NewTaskList } from './index';
 // eslint-disable-next-line import/prefer-default-export
 export function editContent(Task) {
-  const Tasktext = document.getElementById(Task.id * 2);
+  const Tasktext = document.getElementById(`li${Task.id * 2}`);
   Task.description = Tasktext.value;
   NewTaskList.AddToStorage();
 }
