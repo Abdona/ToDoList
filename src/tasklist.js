@@ -11,7 +11,6 @@ import { updateId } from './TaskId';
 export class TaskList {
   constructor(Tasks) {
     this.TaskListCollection = Tasks;
-    this.Task1 = [];
     this.length = 0;
   }
 
@@ -49,12 +48,12 @@ export class TaskList {
     this.length = NewTaskList.length;
     localStorage.setItem('length', JSON.stringify(this.length));
     // eslint-disable-next-line no-restricted-syntax
-    for (const i in this.TaskListCollection) {
-      if (this.TaskListCollection[i].status === true) {
-        document.getElementById(this.TaskListCollection[i].id).remove();
-        NewTaskList = updateId(i, this.length, NewTaskList);
+    this.TaskListCollection.forEach((Task) => {
+      if (Task.status === true) {
+        document.getElementById(Task.id).remove();
+        NewTaskList = updateId(Task.id - 1, this.length, NewTaskList);
       }
-    }
+    });
     this.TaskListCollection = NewTaskList;
     localStorage.setItem('library', JSON.stringify(this.TaskListCollection));
   }
@@ -76,10 +75,10 @@ export class TaskList {
   }
   /* eslint-disable */
     ShowTasks() {
-      for (const i in this.TaskListCollection) {
-        this.length +=1 ;
-        this.addTask(this.TaskListCollection[i],false);
-        this.CheckSelectonref(this.TaskListCollection[i]);
-      }
+      this.TaskListCollection.forEach((Task) => {
+        this.length += 1;
+        this.addTask(Task,false);
+        this.CheckSelectonref(Task);
+      });
     }
   }
