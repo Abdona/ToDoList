@@ -8,9 +8,10 @@ function newId(taskList) {
 function updateId(Start, length, arrayTask) {
   // eslint-disable-next-line no-plusplus
   for (let j = Start; j < length; j++) {
-    document.getElementById(`li${arrayTask[j].id}`).id = arrayTask[j].id - 1;
-    document.getElementById(`li${arrayTask[j].id * 2}`).id = (arrayTask[j].id - 1) * 2;
-    document.getElementById(`li${arrayTask[j].id * 3}`).id = (arrayTask[j].id - 1) * 3;
+    const currntId = arrayTask[j].id;
+    document.getElementById(`${currntId * 1}`).id = `${(currntId - 1)}`;
+    document.getElementById(`li${currntId * 2}`).id = `li${(currntId - 1) * 2}`;
+    document.getElementById(`bx${currntId * 3}`).id = `bx${(currntId - 1) * 3}`;
     arrayTask[j].id -= 1;
   }
   return arrayTask;
