@@ -6,6 +6,10 @@
 # Project Preview
 ![ToDo List preview](TodoListfinal.png)
 
+# Live Demo
+
+[ToDOList](https://abdona.github.io/ToDoList/dist)
+
 ## Built With
 
 - HTML
